@@ -56,7 +56,10 @@ app.use(express.static(__dirname));
 app.get('/items', (req, res) => {
   res.json(breads);
 });
-
+module.exports = (req, res) => {
+  res.writeHead(302, { Location: '/items' });
+  res.end();
+};
 
 // Start the server
 app.listen(3000, () => {

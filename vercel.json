@@ -1,8 +1,5 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }, 
-    {
-        "src": "/",
-        "dest": "/items",
-        "status": 302
-      }]
-}
+    "rewrites": [
+      { "source": "/", "destination": "/redirect.js" }
+    ]
+  }
