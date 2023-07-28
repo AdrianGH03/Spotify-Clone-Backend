@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 
 //JSON
-const artistRoute = 'https://clone-backend-hazel.vercel.app/Images/artistimages/'
-const PlaylistRoute = 'https://clone-backend-hazel.vercel.app/Images/myplaylistimages/'
-const spotifyPlaylistRoute =  'https://clone-backend-hazel.vercel.app/Images/spotifyplaylistimages/'
-const artistAlbumRoute = 'https://clone-backend-hazel.vercel.app/Images/albumImages/'
+const artistRoute = '/Images/artistimages/'
+const PlaylistRoute = '/Images/myplaylistimages/'
+const spotifyPlaylistRoute =  '/Images/spotifyplaylistimages/'
+const artistAlbumRoute = '/Images/albumImages/'
 
 const breads = [
   { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 1},
