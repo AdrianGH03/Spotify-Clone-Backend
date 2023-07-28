@@ -53,7 +53,7 @@ app.use(express.static(__dirname));
 
 
 //Requests
-app.get('/breads', (req, res) => {
+app.get('/', (req, res) => {
   res.json(breads);
 });
 
