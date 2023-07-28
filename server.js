@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 
 //JSON
-const artistRoute = '/Images/artistimages/'
-const PlaylistRoute = '/Images/myplaylistimages/'
-const spotifyPlaylistRoute =  '/Images/spotifyplaylistimages/'
-const artistAlbumRoute = '/Images/albumImages/'
+const artistRoute = 'https://difficult-fly-sombrero.cyclic.app/Images/artistimages/'
+const PlaylistRoute = 'https://difficult-fly-sombrero.cyclic.app/items/Images/myplaylistimages/'
+const spotifyPlaylistRoute =  'https://difficult-fly-sombrero.cyclic.app/items/Images/spotifyplaylistimages/'
+const artistAlbumRoute = 'https://difficult-fly-sombrero.cyclic.app/items/Images/albumImages/'
 
 const breads = [
   { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 1},
