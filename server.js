@@ -54,6 +54,13 @@ data.append('grant_type', 'client_credentials');
 data.append('client_id', clientId);
 data.append('client_secret', clientSecret);
 
+//Middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+app.use(express.static(__dirname));
+
 async function getToken() {
   try {
     const response = await fetch(tokenEndpoint, {
@@ -132,13 +139,6 @@ app.get('/api/playlist-track-uri', async (req, res) => {
   }
 });
 
-
-//Middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-app.use(express.static(__dirname));
 
 
 //Requests
