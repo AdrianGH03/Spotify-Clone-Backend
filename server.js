@@ -9,7 +9,7 @@ const spotifyPlaylistRoute =  'https://difficult-fly-sombrero.cyclic.app/Images/
 const artistAlbumRoute = 'https://difficult-fly-sombrero.cyclic.app/Images/albumImages/'
 
 const breads = [
-  { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 1},
+  { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 1, url: "https://open.spotify.com/playlist/37i9dQZF1DX0018ciYu6bM"},
   
   
   
@@ -17,7 +17,7 @@ const breads = [
   { name: 'J. Cole', type: 'artist', date: '2023-07-06', image:`${artistRoute}jcole.jpg`, category: 'Artist', id: 167},
   { name: 'TrenChill K-R&B', type: 'spotifyAlbum', date: '2023-07-20', category: 'Playlist', image:`${spotifyPlaylistRoute}trenchill.jpg`, creator: 'Spotify', id: 2, url: "https://open.spotify.com/playlist/37i9dQZF1DXbirtHQBuwCo"},
   { name: '2023 Playlist', type: 'userAlbum', date: '2023-07-17', category: 'Playlist', creator: 'Adriancito', image:`${PlaylistRoute}playlistpicture.webp`, id: 3, url: "https://open.spotify.com/playlist/4aHEvG0cTO93AMxxYmuuis"},
-  { name: 'Hype Songs', type: 'userAlbum', date: '2023-07-16', category: 'Playlist', creator: 'Spongebob', image:`${PlaylistRoute}house.jpg`, id: 4, url: "https://open.spotify.com/playlist/2sdtltfitKRxYfb1F1mTbw?si=59fe60bb93d14a76"},
+  { name: 'Hype Songs', type: 'userAlbum', date: '2023-07-16', category: 'Playlist', creator: 'Spongebob', image:`${PlaylistRoute}house.jpg`, id: 4, url: "https://open.spotify.com/playlist/2sdtltfitKRxYfb1F1mTbw"},
   { name: "Harry's House", type: 'artistAlbum', date: '2023-07-19', category: 'Album', creator: 'Harry Styles', image:`${artistAlbumRoute}harryshouse.jpg`, id: 503},
   { name: 'KR&B', type: 'userAlbum', date: '2023-07-15', category: 'Playlist', creator: 'Adriancito', image:`${PlaylistRoute}kr&b.jpg`, id: 5, url: "https://open.spotify.com/playlist/3LmdMWF45HpsDVMolizqaI"},
   { name: 'Logic', type: 'artist', date: '2023-07-03', image:`${artistRoute}logic.jpg`, category: 'Artist', id: 11},
@@ -35,7 +35,7 @@ const breads = [
   { name: 'Liked Songs', type: 'userAlbum', date: '2023-07-11', category: 'Playlist', likedAmount: 33, image:`${PlaylistRoute}like.png`, id: 113},
   { name: 'J-Rock', type: 'userAlbum', date: '2023-07-10', category: 'Playlist', creator: 'Adriancito', image:`${PlaylistRoute}rock.jpg`, id: 114, url: "https://open.spotify.com/playlist/1e16dCtxtD57IkkAmByh7z"},
   { name: 'Roddy Rich', type: 'artist', date: '2023-07-04', image:`${artistRoute}roddyrich.jpg`, category: 'Artist', id: 1675},
-  { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 121},
+ 
   { name: 'B.I.', type: 'artist', date: '2023-07-09', image:`${artistRoute}b.i.jpg`, category: 'Artist', id: 123},
   { name: '3', type: 'userAlbum', date: '2023-07-10', category: 'Playlist', creator: 'Raphael Crabbe', image:`${PlaylistRoute}wow.jpg`, id: 122, url: "https://open.spotify.com/playlist/2vg46UroSPwqZs5w12VP6d"},
   
