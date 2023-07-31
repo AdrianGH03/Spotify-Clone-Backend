@@ -57,6 +57,7 @@ data.append('client_secret', clientSecret);
 //Middleware
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 app.use(express.static(__dirname));
@@ -84,7 +85,7 @@ async function getPlaylistTrackUri(playlistUrl, accessToken) {
     const limit = 100;
     let offset = 0;
     const allTracks = [];
-
+    console.log(playlistId)
     while (true) {
       const response = await fetch(
         `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}&offset=${offset}`,
@@ -129,9 +130,11 @@ app.get('/api/token', async (req, res) => {
 });
 
 app.get('/api/playlist-track-uri', async (req, res) => {
-  const playlistUrl = 'https://open.spotify.com/playlist/4aHEvG0cTO93AMxxYmuuis';
+  const playlistUrl = req.query.playlistUrl; // Get the playlist URL from the query parameter
+  console.log(playlistUrl)
   try {
     const accessToken = await getToken();
+    
     const tracks = await getPlaylistTrackUri(playlistUrl, accessToken);
     res.json({ tracks });
   } catch (error) {
