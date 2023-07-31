@@ -101,7 +101,7 @@ async function getPlaylistTrackUri(playlistUrl, accessToken) {
       const data = await response.json();
 
      
-      const tracksWithPreviewUrl = data.items.filter((track) => track.track.preview_url !== null);
+      const tracksWithPreviewUrl = data.items.filter((track) => track.track.preview_url);
       allTracks.push(...tracksWithPreviewUrl);
 
       if (data.next) {
