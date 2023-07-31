@@ -17,7 +17,7 @@ const breads = [
   { name: 'J. Cole', type: 'artist', date: '2023-07-06', image:`${artistRoute}jcole.jpg`, category: 'Artist', id: 167},
   { name: 'TrenChill K-R&B', type: 'spotifyAlbum', date: '2023-07-20', category: 'Playlist', image:`${spotifyPlaylistRoute}trenchill.jpg`, creator: 'Spotify', id: 2, url: "https://open.spotify.com/playlist/37i9dQZF1DXbirtHQBuwCo"},
   { name: '2023 Playlist', type: 'userAlbum', date: '2023-07-17', category: 'Playlist', creator: 'Adriancito', image:`${PlaylistRoute}playlistpicture.webp`, id: 3, url: "https://open.spotify.com/playlist/4aHEvG0cTO93AMxxYmuuis"},
-  { name: 'Hype Songs', type: 'userAlbum', date: '2023-07-16', category: 'Playlist', creator: 'Spongebob', image:`${PlaylistRoute}house.jpg`, id: 4, url: "https://open.spotify.com/playlist/1VOrRymf251hAGZTm4lOQB"},
+  { name: 'Hype Songs', type: 'userAlbum', date: '2023-07-16', category: 'Playlist', creator: 'Spongebob', image:`${PlaylistRoute}house.jpg`, id: 4, url: "https://open.spotify.com/playlist/2sdtltfitKRxYfb1F1mTbw"},
   { name: "Harry's House", type: 'artistAlbum', date: '2023-07-19', category: 'Album', creator: 'Harry Styles', image:`${artistAlbumRoute}harryshouse.jpg`, id: 503},
   { name: 'KR&B', type: 'userAlbum', date: '2023-07-15', category: 'Playlist', creator: 'Adriancito', image:`${PlaylistRoute}kr&b.jpg`, id: 5, url: "https://open.spotify.com/playlist/3LmdMWF45HpsDVMolizqaI"},
   { name: 'Logic', type: 'artist', date: '2023-07-03', image:`${artistRoute}logic.jpg`, category: 'Artist', id: 11},
