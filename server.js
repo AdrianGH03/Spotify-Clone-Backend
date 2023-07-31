@@ -81,7 +81,7 @@ async function getToken() {
 }
 async function getPlaylistTrackUri(playlistUrl, accessToken) {
   try {
-    const playlistId = playlistUrl.match(/playlist\/([\w-]+)/)[1];
+    const playlistId = playlistUrl.match(/playlist\/(\w+)$/)[1];
     const limit = 100;
     let offset = 0;
     const allTracks = [];
@@ -101,7 +101,7 @@ async function getPlaylistTrackUri(playlistUrl, accessToken) {
       const data = await response.json();
 
      
-      const tracksWithPreviewUrl = data.items.filter((track) => track.track.preview_url);
+      const tracksWithPreviewUrl = data.items.filter((track) => track.track.preview_url == null);
       allTracks.push(...tracksWithPreviewUrl);
 
       if (data.next) {
