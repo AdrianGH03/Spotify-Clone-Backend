@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 //JSON
 const artistRoute = 'https://difficult-fly-sombrero.cyclic.app/Images/artistimages/'
@@ -42,6 +43,94 @@ const breads = [
 
   
 ];
+
+const clientId = process.env.CLIENT_ID; // Make sure to set these environment variables
+const clientSecret = process.env.CLIENT_SECRET;
+
+const tokenEndpoint = 'https://accounts.spotify.com/api/token';
+
+const data = new URLSearchParams();
+data.append('grant_type', 'client_credentials');
+data.append('client_id', clientId);
+data.append('client_secret', clientSecret);
+
+async function getToken() {
+  try {
+    const response = await fetch(tokenEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: data,
+    });
+    const dataTwo = await response.json();
+    const accessToken = dataTwo.access_token;
+    return accessToken;
+  } catch (error) {
+    console.error('Error:', error);
+    return null;
+  }
+}
+async function getPlaylistTrackUri(playlistUrl, accessToken) {
+  try {
+    const playlistId = playlistUrl.match(/playlist\/(\w+)/)[1];
+    const limit = 100;
+    let offset = 0;
+    const allTracks = [];
+
+    while (true) {
+      const response = await fetch(
+        `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}&offset=${offset}`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error('Failed to retrieve playlist tracks');
+      }
+      const data = await response.json();
+
+     
+      const tracksWithPreviewUrl = data.items.filter((track) => track.track.preview_url !== null);
+      allTracks.push(...tracksWithPreviewUrl);
+
+      if (data.next) {
+        offset += limit;
+      } else {
+        break;
+      }
+    }
+    return allTracks;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+app.get('/api/token', async (req, res) => {
+  try {
+    const accessToken = await getToken();
+    if (accessToken) {
+      res.json({ token: accessToken });
+    } else {
+      res.status(500).json({ error: 'Failed to fetch access token' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while fetching the access token' });
+  }
+});
+
+app.get('/api/playlist-track-uri', async (req, res) => {
+  const playlistUrl = 'https://open.spotify.com/playlist/4aHEvG0cTO93AMxxYmuuis';
+  try {
+    const accessToken = await getToken();
+    const tracks = await getPlaylistTrackUri(playlistUrl, accessToken);
+    res.json({ tracks });
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while fetching the playlist tracks' });
+  }
+});
 
 
 //Middleware
