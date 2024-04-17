@@ -3,10 +3,10 @@ const app = express();
 require('dotenv').config();
 
 //JSON
-const artistRoute = 'https://difficult-fly-sombrero.cyclic.app/Images/artistimages/'
-const PlaylistRoute = 'https://difficult-fly-sombrero.cyclic.app/Images/myplaylistimages/'
-const spotifyPlaylistRoute =  'https://difficult-fly-sombrero.cyclic.app/Images/spotifyplaylistimages/'
-const artistAlbumRoute = 'https://difficult-fly-sombrero.cyclic.app/Images/albumImages/'
+const artistRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/artistimages/'
+const PlaylistRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/myplaylistimages/'
+const spotifyPlaylistRoute =  'https://erin-glamorous-gecko.cyclic.app/Images/spotifyplaylistimages/'
+const artistAlbumRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/albumImages/'
 
 const breads = [
   { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 1, url: "https://open.spotify.com/playlist/37i9dQZF1DX0018ciYu6bM"},
