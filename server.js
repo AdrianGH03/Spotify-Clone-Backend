@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+
 const cors = require('cors');
 require('dotenv').config();
 
@@ -8,6 +8,11 @@ const artistRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/artistimages
 const PlaylistRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/myplaylistimages/'
 const spotifyPlaylistRoute =  'https://erin-glamorous-gecko.cyclic.app/Images/spotifyplaylistimages/'
 const artistAlbumRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/albumImages/'
+
+const app = express();
+app.use(cors({
+  origin: 'https://sp-cloneagh3.netlify.app' 
+}));
 
 const breads = [
   { name: 'KimBops', type: 'spotifyAlbum', date: '2023-07-21', category: 'Playlist', image:`${spotifyPlaylistRoute}kimbops.jpg`, creator: 'Spotify', id: 1, url: "https://open.spotify.com/playlist/37i9dQZF1DX0018ciYu6bM"},
@@ -61,9 +66,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-app.use(cors({
-  origin: 'https://sp-cloneagh3.netlify.app' 
-}));
+
 app.use(express.static(__dirname));
 
 async function getToken() {
