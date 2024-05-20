@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 require('dotenv').config();
 
 //JSON
@@ -60,6 +61,9 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
+app.use(cors({
+  origin: 'https://sp-cloneagh3.netlify.app' 
+}));
 app.use(express.static(__dirname));
 
 async function getToken() {
