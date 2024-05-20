@@ -4,10 +4,10 @@ const cors = require('cors');
 require('dotenv').config();
 
 //JSON
-const artistRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/artistimages/'
-const PlaylistRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/myplaylistimages/'
-const spotifyPlaylistRoute =  'https://erin-glamorous-gecko.cyclic.app/Images/spotifyplaylistimages/'
-const artistAlbumRoute = 'https://erin-glamorous-gecko.cyclic.app/Images/albumImages/'
+const artistRoute = 'https://sp-clone-be.netlify.app/Images/artistimages/'
+const PlaylistRoute = 'https://sp-clone-be.netlify.app/Images/myplaylistimages/'
+const spotifyPlaylistRoute =  'https://sp-clone-be.netlify.app/Images/spotifyplaylistimages/'
+const artistAlbumRoute = 'https://sp-clone-be.netlify.app/Images/albumImages/'
 
 const app = express();
 app.use(cors({
